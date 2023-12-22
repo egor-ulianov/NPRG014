@@ -35,6 +35,8 @@ object RationalOps:
 	extension (lhs: Int)
 		def ~ (dummy: R.type) = Rational(lhs)
 
+		def / (rhs: Rational) = Rational(lhs) / rhs
+
 
 object RationalWithExtensionTest:
 	def main(args: Array[String]): Unit =

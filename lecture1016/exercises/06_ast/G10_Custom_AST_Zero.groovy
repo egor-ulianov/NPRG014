@@ -30,7 +30,11 @@ public @interface Zero {}
 public class ZeroTransformation implements ASTTransformation {
 
     public void visit(ASTNode[] astNodes, SourceUnit source) {
+        ClassNode annotatedClass = astNodes[1]
 
+        ASTNode stmt = new ExpressionStatement(new ConstantExpression(0))
+
+        annotatedClass.addMethod("getZero", Opcodes.ACC_PUBLIC, ClassHelper.Integer_TYPE, [] as Parameter[], [] as ClassNode[], stmt)        
     }
 }
 

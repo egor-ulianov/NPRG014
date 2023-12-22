@@ -8,12 +8,67 @@ class PhoneNo(val prefix: Int, val number: Int)
 class Person(val firstName: String, val lastName: String, val phone: PhoneNo)
 class Address(val person: Person, val street: String, val city: String)
 
-// ... add the necessary classes
+def indentTail(value: String): String =
+  val lines = value.split("\n").toList
+  (lines.head :: lines.tail.map(x => s"  $x")).mkString("\n")
 
-/*
+trait JsonSerializer[T]:
+  def serialize(obj: T): String
+
+  extension (x: T)
+    def toJson: String = serialize(x)
+
+object JsonSerializer:
+
+  given stringSerializer: JsonSerializer[String] with
+    def serialize(s: String): String = s"\"$s\""
+
+  given intSerializer: JsonSerializer[Int] with
+    def serialize(i: Int): String = s"$i"
+
+  given listSerializer[T](using JsonSerializer[T]): JsonSerializer[List[T]] with
+    def serialize(lst: List[T]): String =
+      val lines = for entry <- lst yield
+        val value = summon[JsonSerializer[T]].toJson(entry)
+        s"${indentTail(value)}"
+
+      s"[ ${lines.mkString(", ")} ]"
+
+  given mapSerializer[T](using JsonSerializer[T]): JsonSerializer[Map[String, T]] with
+    def serialize(map: Map[String, T]): String =
+      val lines = for (key, originalValue) <- map yield
+        val serializedValue = summon[JsonSerializer[T]].toJson(originalValue)
+        s"${indentTail(key.toJson)}: ${indentTail(serializedValue)}"
+
+      s"{ ${lines.mkString(", ")} }"
+
+
+object PhoneNo:
+  given JsonSerializer[PhoneNo] with
+    def serialize(phone: PhoneNo) =
+      import JsonSerializer.given
+      s"""{ "prefix": ${phone.prefix.toJson}, "number": ${phone.number.toJson} }"""
+
+object Person:
+  given JsonSerializer[Person] with
+    def serialize(person: Person) =
+      import JsonSerializer.given
+      import PhoneNo.given
+      s"""{ "firstName": ${person.firstName.toJson}, "lastName": ${person.lastName.toJson}, "phone": ${person.phone.toJson} }"""
+
+object Address:
+  given JsonSerializer[Address] with
+    def serialize(address: Address) =
+      import JsonSerializer.given
+      import Person.given
+      s"""{ "person": ${address.person.toJson}, "street": ${address.street.toJson}, "city": ${address.city.toJson} }"""
+
+
 object JsonSerializerTest:
   def main(args: Array[String]): Unit =
     import JsonSerializer.given
+
+
     val a1 = "Hello"
     println(a1.toJson) // "Hello"
 
@@ -39,5 +94,3 @@ object JsonSerializerTest:
 
     val f = List(e1, e2)
     println(f.toJson) // [ { "person": { "firstName": "John", "lastName": "Doe", "phone": { "prefix": 1, "number": 123456 } }, "street": "Bugmore Lane 3", "city": "Lerfourche" }, { "person": { "firstName": "Jane", "lastName": "X", "phone": { "prefix": 420, "number": 345678 } }, "street": "West End Woods 1", "city": "Holmefefer" } ]
-
-*/

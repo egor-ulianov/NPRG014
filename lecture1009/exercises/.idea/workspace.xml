@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f444d3a7-4eef-48bd-9ffc-294495c2d212" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/05_dsl/G02_DSLb.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/05_dsl/G02_DSLb.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_dsl/G04_XML.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/05_dsl/G04_XML.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_dsl/G08_Swing.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/05_dsl/G08_Swing.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_dsl/G11_CustomBuilder.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/05_dsl/G11_CustomBuilder.groovy" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2WW4RuF58jreaSWnnphqcG1cm9J" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/egorulanov/Studies/NPRG014/lecture1009/exercises&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="G01_DynamicDispatch" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+      <module name="exercises" />
+      <setting name="path" value="file://$PROJECT_DIR$/04_dynamism/G01_DynamicDispatch.groovy" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$/04_dynamism" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Groovy.G01_DynamicDispatch" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f444d3a7-4eef-48bd-9ffc-294495c2d212" name="Changes" comment="" />
+      <created>1696834996749</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696834996749</updated>
+    </task>
+    <servers />
+  </component>
+</project>
